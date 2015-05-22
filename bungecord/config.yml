@@ -1,0 +1,76 @@
+groups:
+  Lupin:
+  - admin
+  Sistray:
+  - admin
+disabled_commands:
+- plugins
+- version
+- bungee
+- restart
+- reload
+
+player_limit: -1
+stats: f471d307-4aff-4b6d-b223-e66128f38d36
+permissions:
+  default:
+  - bungeecord.command.list
+  - onlinetime.own
+  - onlinetime.top
+  - skinsrestorer.playercmds
+  - skinsrestorer.cmds
+  - bungeefilter.colorbypass
+  admin:
+  - bungeecord.command.server
+  - bungeecord.command.alert
+  - onlinetime.others
+  - skinsrestorer.playercmds
+  - skinsrestorer.cmds
+  - bungeecord.command.ip
+  - bungeecord.command.reload
+  - bungeecord.command.send
+listeners:
+- query_port: 25577
+  motd: '|&b&kii&r| ]&4-----&r[ &eComunidad &AForseti &r]&4-----&r[ |&b&kii&r|'
+  tab_list: SERVER
+  query_enabled: false
+  ping_passthrough: false
+  default_server: prelogin
+  bind_local_address: true
+  fallback_server: oldmain
+  host: 0.0.0.0:25565
+  max_players: 500
+  tab_size: 30
+  force_default_server: true
+  forced_hosts:
+    forseti.com.es: prelogin
+    test.forseti.com.es: test
+timeout: 30000
+connection_throttle: 400000
+servers:
+  oldmain:
+    motd: '|&b&kii&r| ]&4-----&r[ &eComunidad &AForseti &r]&4-----&r[ |&b&kii&r|'
+    address: 127.0.0.1:21465
+    restricted: false
+  newmain:
+    address: 127.0.0.1:21445
+    restricted: false
+    motd: '&1Comunidad www.Forseti.com.es'
+  vip:
+    address: 127.0.0.1:21475
+    restricted: false
+    motd: '&1Comunidad www.Forseti.com.es'
+  plotcreative:
+    address: 127.0.0.1:21496
+    restricted: false
+    motd: '&1Comunidad www.Forseti.com.es'
+  prelogin:
+    address: 127.0.0.1:21485
+    restricted: false
+    motd: '|&b&kii&r| ]&4-----&r[ &eComunidad &AForseti &r]&4-----&r[ |&b&kii&r|'
+  test:
+    address: 127.0.0.1:21565
+    restricted: false
+    motd: '&1Comunidad www.Forseti.com.es'
+ip_forward: true
+online_mode: false
