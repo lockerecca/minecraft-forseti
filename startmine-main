@@ -1,0 +1,131 @@
+ #!/bin/bash
+ # /etc/init.d/mine-main
+ # version 0.3.9 2012-08-13 (YYYY-MM-DD)
+ 
+ ### BEGIN INIT INFO
+ # Provides:   mine-main
+ # Required-Start: $local_fs $remote_fs screen-cleanup
+ # Required-Stop:  $local_fs $remote_fs
+ # Should-Start:   $network
+ # Should-Stop:    $network
+ # Default-Start:  2 3 4 5
+ # Default-Stop:   0 1 6
+ # Short-Description:    mine-main server
+ # Description:    Starts the mine-main server
+ ### END INIT INFO
+ 
+ #Settings
+ SERVICE='spigot-1.8.4.jar'
+ OPTIONS='nogui'
+ USERNAME='minesrv'
+ MCPATH='/home/minesrv/minecraft-git/mine-main/'
+ MAXHEAP=6144
+ MINHEAP=6144
+ HISTORY=1024
+ CPU_COUNT=4
+ SCREENNAME=mine-brutalle
+ LOGFILENAME=$MCPATH/logs/latest.log
+ INVOCATION="java -Xmx${MAXHEAP}M -Xms${MINHEAP}M -XX:+UseConcMarkSweepGC \
+ -XX:+CMSIncrementalPacing -XX:ParallelGCThreads=$CPU_COUNT -XX:+AggressiveOpts \
+ -jar $SERVICE $OPTIONS" 
+ SCREENPID=$(screen -ls | awk '/\.'$SCREENNAME'\t/ {print strtonum($1)}')
+
+ ME=`whoami`
+ as_user() {
+   if [ $ME == $USERNAME ] ; then
+     bash -c "$1"
+   else
+     su - $USERNAME -c "$1"
+   fi
+ }
+
+ program_start() {
+
+   if  ps -p $SCREENPID > /dev/null
+   then
+     echo "$SERVICE is already running!"
+   else
+     echo "Starting $SERVICE..."
+     cd $MCPATH
+     as_user "cd $MCPATH && screen -h $HISTORY -dmS $SCREENNAME $INVOCATION"
+     sleep 7
+	 SCREENPID=$(screen -ls | awk '/\.'$SCREENNAME'\t/ {print strtonum($1)}')
+     if ps -p $SCREENPID > /dev/null
+     then
+       echo "$SERVICE is now running."
+     else
+       echo "Error! Could not start $SERVICE!"
+     fi
+   fi
+ }
+ 
+ program_stop() {
+   if ps -p $SCREENPID > /dev/null
+   then
+     echo "Stopping $SERVICE"
+     as_user "screen -p 0 -S $SCREENNAME -X eval 'stuff \"say Reinicio Del Servidor en 20 Segundos...\"\015'"
+     as_user "screen -p 0 -S $SCREENNAME -X eval 'stuff \"save-all\"\015'"
+     sleep 20
+     as_user "screen -p 0 -S $SCREENNAME -X eval 'stuff \"stop\"\015'"
+     sleep 15
+   else
+     echo "$SERVICE was not running."
+   fi
+   SCREENPID=$(screen -ls | awk '/\.'$SCREENNAME'\t/ {print strtonum($1)}')
+   if ps -p $SCREENPID > /dev/null
+   then
+     echo "Error! $SERVICE could not be stopped."
+   else
+     echo "$SERVICE is stopped."
+   fi
+ } 
+ 
+ program_command() {
+   command="$1";
+   if ps -p $SCREENPID > /dev/null
+   then
+     pre_log_len=`wc -l "$LOGFILENAME" | awk '{print $1}'`
+     echo "$SERVICE is running... executing command"
+     as_user "screen -p 0 -S $SCREENNAME -X eval 'stuff \"$command\"\015'"
+     sleep .1 # assumes that the command will run and print to the log file in less than .1 seconds
+     # print output
+     tail -n $[`wc -l "$LOGFILENAME" | awk '{print $1}'`-$pre_log_len] "$LOGFILENAME"
+   fi
+ }
+ 
+ #Start-Stop here
+ case "$1" in
+   start)
+     program_start
+     ;;
+   stop)
+     program_stop
+     ;;
+   restart)
+     program_stop
+     program_start
+     ;;
+   status)
+     if ps -p $SCREENPID > /dev/null
+     then
+       echo "$SERVICE is running."
+     else
+       echo "$SERVICE is not running."
+     fi
+     ;;
+   command)
+     if [ $# -gt 1 ]; then
+       shift
+       program_command "$*"
+     else
+       echo "Must specify server command (try 'help'?)"
+     fi
+     ;;
+ 
+   *)
+   echo "Usage: $0 {start|stop|status|restart|command \"server command\"}"
+   exit 1
+   ;;
+ esac
+ 
+ exit 0

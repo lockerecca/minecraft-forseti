@@ -1,0 +1,50 @@
+prefix: "§a[Tienda] §r"
+iteminfo: "§aInformacion del Item: §r"
+
+ACCESS_DENIED: "Para comprar o vender dale click al cartel."
+
+NOT_ENOUGH_MONEY: "No tienes dinero suficiente."
+NOT_ENOUGH_MONEY_SHOP: "El propietario de la tienda no tiene mas dinero."
+
+CLIENT_DEPOSIT_FAILED: "No se pudo Depositar dinero a su cuenta."
+SHOP_DEPOSIT_FAILED: "No se pudo Depositar dinero al propietario."
+
+NO_BUYING_HERE: "No puedes comprar aqui."
+NO_SELLING_HERE: "No puedes vender aqui."
+
+NOT_ENOUGH_SPACE_IN_INVENTORY: "No tienes suficiente espacio en el inventario."
+NOT_ENOUGH_SPACE_IN_CHEST: "No hay suficiente espacio en el cofre."
+NOT_ENOUGH_ITEMS_TO_SELL: "No tienes mas items para vender."
+
+NOT_ENOUGH_STOCK: "Esta tienda se ha quedado sin stock."
+NOT_ENOUGH_STOCK_IN_YOUR_SHOP: "Tu tienda de §7%material§rse ha quedado sin stock."
+YOU_BOUGHT_FROM_SHOP: "Compraste §7%item§r de §6%owner§r por §e%price§r"
+SOMEBODY_BOUGHT_FROM_YOUR_SHOP: "§6%buyer§r te ha comprado §7%item§r a §e%price§r"
+
+YOU_SOLD_TO_SHOP: "Vendiste §7%item§r a §6%buyer§r por §e%price§r"
+SOMEBODY_SOLD_TO_YOUR_SHOP: "§6%seller§r te ha vendido §7%item§r a §e%price§r"
+
+YOU_CANNOT_CREATE_SHOP: "No puedes crear este tipo de tienda."
+NO_CHEST_DETECTED: "No se pudo encontrar el cofre."
+INVALID_SHOP_DETECTED: "La tienda no puede ser usada."
+CANNOT_ACCESS_THE_CHEST: "Tu no tienes permiso para acceder a este cofre."
+
+PROTECTED_SHOP: "Tienda protegida satisfactoriamente!"
+SHOP_CREATED: "Tienda creada correctamente!"
+SHOP_FEE_PAID: "Han sido cargados %amount"
+SHOP_REFUNDED: "Has reembolsado %amount."
+
+RESTRICTED_SIGN_CREATED: "Sign satisfactoriamente creado!"
+
+NO_PERMISSION: "Tu no tienes permiso para hacer esto!"
+INCORRECT_ITEM_ID: "El ID del item especificado no es valido!"
+NOT_ENOUGH_PROTECTIONS: "Has llegado al limite de protecciones!"
+
+CANNOT_CREATE_SHOP_HERE: "Tu no puedes crear una tienda aqui!"
+ITEM_GIVEN: "Given %item to %player."
+
+PLAYER_NOT_FOUND: "Player not found!"
+
+TOGGLE_MESSAGES_OFF: "You will no longer receive messages from your shop(s)."
+TOGGLE_MESSAGES_ON: "You will now receive messages from your shop(s)."
+

@@ -1,0 +1,26 @@
+# Banknotes by SainttX
+# WARNING: If your users have notes and you modify this,
+#          their notes will be invalid and not registered by the plugin anymore
+note:
+  material: PAPER
+  data: 0
+  name: "&lJewels"
+  lore:
+  - "Cantidad Jewels $[money]"
+  - "Creado por [player]"
+
+messages:
+  insufficient-funds: "&4[&eIntercambio&4]&c No Tienes Suficiente Dinero"
+  insufficient-permissions: "You do not have enough permissions"
+  inventory-full: "&4[&eIntercambio&4]&c Asegurate de tener Espacio en tu Inventario"
+  invalid-note: "&4[&eIntercambio&4]&c Estos Jewels no son Validos. Seran Destruidos"
+  invalid-number: "&4[&eIntercambio&4]&c Numero Incorrecto"
+  note-created: "&4[&eIntercambio&4]&c Creado Papel con $[money] Jewels"
+  note-redeemed: "&4[&eIntercambio&4]&c Pago de $[money] Jewels Correcto"
+  nothing-in-hand: "&4[&eIntercambio&4]&c No Tienes Selecionado el Papel de Jewels"
+  less-than-minimum: "The amount you entered is less than the minimum allowed amount of $[money]"
+  more-than-maximum: "The amount you entered is more than the maximum allowed amount of $[money]"
+  
+settings:
+  minimum-withdraw-amount: 100.0
+  maximum-withdraw-amount: 250000.0

@@ -1,0 +1,45 @@
+CountdownLength: 5
+Distance: 10.0
+TradeCurrency: true
+TradeCurrencyAmount: 100.0
+Messages:
+  error-not-involved: '&bIntercambio> &7You are currently not involved in any trades'
+  error-trade-already-accepted: '&bIntercambio> &7The trade has already been accepted'
+  error-accepter-different-trade: '&bIntercambio> &7The player &b%accepter% &7is currently
+    involved in a different trade'
+  error-requester-different-trade: '&bIntercambio> &7You are currently involved in
+    a different trade'
+  error-distance: '&bIntercambio> &7Tienes que estar a menos de 10 blockes del jugador '
+  error-world: '&bIntercambio> &7Tienes que estar en el mismo Mundo'
+  error-self: '&bIntercambio> &7Busgando bugs? tradeandote a ti mismo?'
+  error-not-online: '&bIntercambio> &b%accepter% &7no esta conectado'
+  error-incorrect-usage: '&bIntercambio> &7Incorrect Usage, Correct Usage: &b/Trade
+    (PlayerName)&7, &b/Trade Accept&7, or &b/Trade Decline'
+  trade-request-sent: '&bIntercambio> &7Trade request sent to the player &b%accepter%'
+  trade-request-received: '&bIntercambio> &b%requester% &7quiere Intercambiar &6pon
+    /trade accept &7o en 15 segundos se cancela'
+  trade-accepted: '&bIntercambio> &7Intercarmbio Aceptado'
+  trade-successful: '&bIntercambio> &7Intercarmbio Seguro Completado'
+  trade-cancelled: '&bIntercambio> &7Intercarmbio fue Cancelado'
+Item-Names:
+  inventory: '|Ofreces|            |Recibes|'
+  divider: ' '
+  decline-trade: '&cClick para Cancelar'
+  accept-trade: '&aClick para Confirmar'
+  not-ready: '&7Esperando Confirmacion'
+  ready: '&aReady'
+  add-currency: '&aAñadir &f%currencyamount%'
+  remove-currency: '&cQuitar &f%currencyamount%'
+  total-currency: '&aCantidad de Dinero en el Intercambio: &f%currencyamount%'
+Item-Lores:
+  decline-trade:
+  - '&7Click this block at any'
+  - '&7time during the trade to cancel'
+  accept-trade:
+  - '&7Once both traders have clicked'
+  - '&7this block, the countdown will'
+  - '&7begin'
+  add-currency:
+  - '&7Añade tu dinero al Intercambio'
+  remove-currency:
+  - '&7Retira tu dinero al Intercambio'

@@ -1,0 +1,105 @@
+spawn:
+  location: ForsetiMap, -2585.957, 91.221, 1528.873
+  lines:
+  - '&u[x]&rBienvenido/a &u{player} &r al servidor forseti!&u[x]'
+  - '&u[x]&rActualmente hay &u{online}&r jugadores en el servidor!&u[x]'
+survival:
+  location: hub, -59.580, 64.000, -34.126
+  lines:
+  - '&u[x]&rSurvival PVP&u[x]'
+  - '&u[p]&rPVP On&u[p]'
+  - '&u[p]&rRobar PERMITIDO&u[p]'
+  - '&u[p]&rPiedras de protección&u[p]'
+  - '&u[p]&rNo reset&u[p]'
+minijuegos:
+  location: hub, -92.610, 64.200, -72.591
+  lines:
+  - '&u[x]&rMinijuegos&u[x]'
+  - '&u[p]&rSkyWars&u[p]'
+  - '&u[p]&rJuegos del hambre&u[p]'
+  - '&u[p]&rKitPVP&u[p]'
+surrec:
+  location: hub, -62.580, 64.016, -43.834
+  lines:
+  - '&u[x]&rSurvival y Recursos&u[x]'
+recursos:
+  location: hub, -65.459, 64.016, -34.357
+  lines:
+  - '&u[x]&rRecursos&u[x]'
+  - '&u[p]&rPVP Off&u[p]'
+  - '&u[p]&rRobar no PERMITIDO&u[p]'
+  - '&u[p]&rReset cada 3 meses&u[p]'
+  - '&u[p]&rUnico para minar&u[p]'
+vip:
+  location: ForsetiMap, -2598.205, 91.608, 1522.288
+  lines:
+  - '&u[x]&rRecuerda donar al servidor&u[x]'
+  - '&u[x]&rPara que se mantenga en pie!&u[x]'
+info:
+  location: hub, -58.856, 68.700, -75.992
+  lines:
+  - '&u[x]&rEl servidor está en fase BETA&u[x]'
+  - '&u[x]&rPuedes aportar ideas al servidor, buscamos personal!&u[x]'
+forseti:
+  location: hub, -62.573, 73.364, -72.547
+  lines:
+  - '&u[x]&rServidor &uFORSETI[x]'
+zonavip:
+  location: ForsetiMap, -2586.128, 91.242, 1516.831
+  lines:
+  - '&u[x]&rZona VIP&u[x]'
+  - '&u[p]&rDonaciones&u[p]'
+  - '&u[p]&rSe un DIOS&u[p]'
+  - '&u[p]&rTen ventaja a los demás&u[p]'
+  - '&u[p]&rRecursos unico&u[p]'
+  - '&u[p]&rParcelas VIP&u[p]'
+parcelas:
+  location: hub, -62.547, 64.476, -102.523
+  lines:
+  - '&u[x]&rZona Parcelas&u[x]'
+  - '&u[p]&rParcelas GRATIS&u[p]'
+  - '&u[p]&rObten tu parcela protegida&u[p]'
+  - '&u[p]&rZona sin PVP&u[p]'
+  - '&u[p]&r¡Nadie te robará!&u[p]'
+agusdantescarmilupin:
+  location: Parcelas, -526.131, 66.200, 177.577
+  lines:
+  - '&4Lupin'
+welcomenoob:
+  location: ForsetiMap, 64.484, 68.000, 213.700
+  lines:
+  - '&6Bienvenido a la'
+  - '&6Comunidad Forseti'
+paseonoob2:
+  location: ForsetiMap, 64.466, 67.000, 222.586
+  lines:
+  - '&6Te Recomiendo 2 jobs'
+  - '&cCazador'
+  - '&8 Minero'
+sobrevive:
+  location: ForsetiMap, 37.633, 68.232, 193.504
+  lines:
+  - '&4Sobrevive'
+  - '&6Mucha Suerte!'
+  - '&2Y Recuerda Mapa Web'
+spcommands:
+  location: ForsetiMap, -2593.489, 90.229, 1535.696
+  lines:
+  - '&6Ayuda de Comandos'
+spnormas:
+  location: ForsetiMap, -2585.427, 91.354, 1535.700
+  lines:
+  - '&6Normas del Server'
+salidaspawn:
+  location: ForsetiMap, -2613.589, 73.444, 1522.359
+  lines:
+  - '&6Salida al Survival'
+noobjob:
+  location: Spawn, 3389.690, 101.112, -1064.520
+  lines:
+  - '&6Soy Noob'
+  - '&6Quiero &dJewels'
+ayuda:
+  location: ForsetiMap, -2573.864, 89.155, 1522.990
+  lines:
+  - '&6Salita de Ayudas'

@@ -1,0 +1,315 @@
+# Welcome to the configuration! It can be hard to configure the plugin correctly, but once you do, hackers will feel the heat.
+#
+# The most important values are the Threshhold and Safe Hit Decreasing values.
+# The others are mostly just customization and tweaks.
+# 
+# Increasing these values makes detection slower, but will definitely fix false positives.
+#
+# Decreasing catches clients more effectively and faster - But watch out for catching legitimate players!
+#
+# Threshhold/SafeHitDecrease options are:
+# 
+# Threshhold and SafeHitDecrease (for MobInFront).
+# HeadValue (for HeadPlayer). HeadPlayer doesn't need a Safe Hit Decrease option.
+# DetectThreshhold (for normal check). This doesn't have a "Decrease" system.
+# Threshhold and LowerAmount (for AntiKnockback).
+#
+# If you get a false positive (or not detecting) for any of these features, increase or lower their Threshhold/SafeHit variables.
+#
+# The way that AntiAura works is that IT HAS FALSE POSITIVES. That is why there is the threshhold system!
+# In other words, as long as hackers get MORE "false positives" than non-hacking players, you won't get any false kicks !
+# The default configuration is USUALLY fine. But a lot can be modified to improve hack detection or squash bugs.
+#
+Important:
+  #To fix tab flickering...
+  FixTabFlickering:
+    #This pre-spawns mobs to be used. How many do you want spawned?
+    #This means that this amount of mobs will ALWAYS be spawned alongside EVERY player!
+    #If your server is lagging due to a high ticking of EntitySquid, LOWER THIS!
+    MobAmount: 30
+Forcefield:
+  MobInFront:
+    #Enabling this will enable the old detecton behaviour, which will catch AutoClicker and Macros much better.
+    #If you enable this, you may need higher SafeHitDecrease values. *Technically* it MAY detect forcefield faster.
+    OldBehaviour: false
+    #Currently the plugin checks every hit when the check is intiated.
+    #Do you want to only check one hit in every check?
+    #May make detection faster for some clients, and slower for others. You may need to experiment with this.
+    OneHitPerCheck: false
+    #Do you want to enable the mob in front?
+    #This will create a squid between the player and the person who he is attacking.
+    #If the player still hits the person (with the squid in the way), he is hacking.
+    Enable: true
+    #Do you want a squid to be riding the already-spawned squid?
+    #This is just there to stop clients hitting above the squid.
+    #Disable this if you are seeing flickering squids during PVP.
+    MobOnTop: true
+    #Every time a person hits the player (when the squid is spawned), the number goes up by 1.
+    #Every time a person hits the squid (when the squid is spawned), the number goes down by your SafeHitDecrease value in the config.
+    #If the number hits this value, the person is detected for hacking (and MobBypassCommand is executed).
+    Threshhold: 10
+    #As described above, how much should Threshhold go down by on a non-hacking hit?
+    SafeHitDecrease: 4.5
+    #How long (in ticks) do you want the entity spawned? 20 ticks equal one second.
+    #Lower this to 15 if your Threshhold is at 10 and people are still kicked!
+    TimeSpawned: 20
+    #The nearer the player is to the player he is hitting, the more likely false-positives are to occur.
+    #The plugin will not do the MobInFront check if the player is closer than MinDistance blocks to the other player.
+    #You can decrease it if you are having issues with not detecting. A minimum value of 1 may be acceptable.
+    MinDistance: 1.5
+    #What commmands do you want to execute when the person is detected bypassing the squid?
+    MobBypassCommand: kick %PLAYER% Forcefield is not allowed!#broadcast %PLAYER% was kicked for hacking! (MobBypass)
+    #Disable MobInFront when fighting mobs spawned by a spawner?
+    #Disable this if you do not have a server that would have MobGrinders.
+    MobGrinderCompatibility: true
+  HeadPlayer:
+    #Normally the HeadPlayer is constantly teleported above your player.
+    #Do you instead want to spawn him on an invisible entity riding the player?
+    #This will fix any issues with the HeadPlayer falling down and becoming visible.
+    HeadPlayerRidingEntity: false
+  #What commands do you want to execute when the person is detected for forcefield (using the HeadPlayer or normal checks)?
+  ForcefieldCommand: kick %PLAYER% Forcefield is not allowed!#broadcast %PLAYER% was kicked for hacking! (Normal)
+  #Do you want to set the player above your head that is spawned to be invisible?
+  #This is recommended left as false! Some hacked clients ignore invisible players!
+  HeadPlayerInvisible: false
+  #The amount of times you need to hit the HeadPlayer before you are detected.
+  #Rules as to how the number goes up/down are the same ones explained on the MobInFront threshhold value.
+  HeadValue: 3
+  #How high do you want the HeadPlayer to be?
+  #Setting to higher will have less chance of a hacked client being detected.
+  #Setting too low can give false positives when players are jumping or similar.
+  HeadHeight: 4
+  #How often (in seconds) do you want to do a check for a player to see if he is using forcefield?
+  #WARNING: /areload WILL NOT change this value! You need to reload/restart the entire server or use PlugMan!
+  CheckTime: 5
+  #How long (in seconds) to spawn the HeadPlayer and the normal players before they dissappear.
+  #A value of 1 is 0.5 seconds. Increase this if the hacked clients are not hitting the fake entities.
+  RemoveTime: 1
+  #Set to false to disable the player above your head.
+  HeadPlayer: true
+  #Set to false if you want to disable random checking of players (e.g. if you want to check people only during PVP).
+  #The normal checks can create a SMALL amount of lag. If you only care about checking during PVP, disable this!
+  NormalChecks: true
+  #Set to true if you want to have the head player only, and get rid of the 4 fake entities surrounding the player.
+  HeadCheckOnly: false
+  #If CheckDuringPVP is on, how long since the player has last hit someone should he be able to be checked again?
+  #Increase this if the plugin gives any lag issues.
+  PVPTime: 5
+  #Normally, the plugin checks player 1, then waits the CheckTime, then checks player 2.
+  #Do you want to just check ALL players at once? May become laggy if you have too many players.
+  AllAtOnce: true
+  #How many players around him should the person have to hit to be detected?
+  DetectThreshhold: 3
+  #Do you want to check a person for forcefield whenever he hits someone?
+  CheckDuringPVP: true
+
+
+
+
+#Block AutoBow. Default settings can and will be fine for this.
+#This is blocked as well as detected, so you could leave AutoBowCommand to blank and still have this feature work.
+AutoBow:
+  #Do you want to enable AutoBow blockage?
+  #This will temporarily block someone from using AutoBow until they stop using it.
+  Enable: true
+  #How many times should the person be detected for AutoBow before the command is executed?
+  #It goes up and down by 1 - I don't see a reason for a SafeHitDecrease/LowerAmount variable for this one.
+  BowThreshhold: 5
+  #Command to execute when a player reaches the Bow Threshhold.
+  AutoBowCommand: kick %PLAYER% AutoBow is not allowed!#broadcast %PLAYER% was kicked for hacking! (AutoBow)
+
+
+
+
+#If people are "Bypassing" this, increase SoupTime. This can't be bypassed. Ever.
+Soup:
+  #Do you want to enable anti-Autosoup?
+  Enabled: true
+  #How long after last hitting someone is the person not allowed to move items in his inventory?
+  SoupTime: 1
+
+
+
+
+#Blocks map and tracer hacks. May cause a small amount of lag.
+#Lag caused by this feature has been greatly reduced since AntiAura 4.0.
+Map:
+  #Do you want to enable the MapScrewer at all (this ruins minimaps and tracers).
+  MapScrewer: true
+  #How far away should you check entities and players near the player to hide/unhide them?
+  #Lowering this SIGNIFICANTLY decreases the lag per check of each player.
+  DistanceChecked: 50
+  #How often do you want people to be checked?
+  #Raising this over 15 will decrease realism and make players appear to appear out of nowhere.
+  #Decreasing it to 1 will mean totan realism, but may cause a bit of lag.
+  #WARNING: /areload WILL NOT change this value! You need to reload/restart the entire server or use PlugMan!
+  HowOften: 5
+  #If an entity or player is closer than this, they will be visible regardless of if you can actually see them.
+  MinDistance: 10
+  #This will HIDE PLAYERS FROM YOU if you cannot see them!
+  #WARNING! THIS WILL HIDE THEIR NAMETAGS TOO!
+  HidePlayers: true
+  #Do you want to mess up tracers by spawning fake players?
+  SpawnFakePlayers: true
+  #The max entities this feature can spawn.
+  #Lower amounts will create less lag.
+  #Higher amounts will block tracers better.
+  #Doesn't technically affect performance as much as DistanceChecked.
+  MaxEntities: 200
+
+
+
+
+
+#Knockback checking has heavily been improved recently.
+#If you get false positives, first turn up MinimumKnockbackCheck to 0.2, then increase LowerAmount, Then Threshhold.
+Knockback:
+  #Do you want to enable AntiKnockback checking at all?
+  Enabled: true
+  #How many ticks after the player has been hit should it be checked if he has moved?
+  #There are 20 ticks in 1 second.
+  TicksAfterHitToCheck: 6
+  #What is the LOWEST velocity to check a player?
+  #Knockback amounts lower than this will not be checked for hacks.
+  #Setting this too low means that players just walking normally could change their velocity and be detected.
+  #If you get false positives by hitting people with your fists or blocks, RAISE THIS!
+  MinimumKnockbackCheck: 0.1
+  #Set to true if you want to NOT check players if they are standing next to a wall.
+  #Hitting a wall obviously stops the player from being knocked back, which may cause bad results.
+  DontCheckOnWalls: true
+  #Command to execute when person is detected for Knockback.
+  KnockbackCommand: kick %PLAYER% antiknockback is not allowed!#broadcast %PLAYER% was kicked for hacking!
+  #You know how threshholds work by now.
+  #If the person is detected for AntiKnockback, raise value by 1.
+  #If the person is not detected for AntiKnockback, lower value by LowerAmount.
+  #If value hits the Threshhold, command is executed.
+  #It is not recommended you change this! Raise the LowerAmount variable instead!
+  Threshhold: 5
+  #How much do you want to lower the threshhold when a player is detected as legit?
+  #If hacked clients have a higher detect rate than normal people, it may be a good idea to set a low Difference and a high LowerAmount.
+  #With the above suggestion, legit players would be detected more but kept below the threshholds, wheras hacked clients who were detected more would get kicked.
+  LowerAmount: 2
+  #If a player is sprinting torwards another player, he may travel too far forward after being hit and trigger the detection.
+  #Disable this only if MinimumKnockbackCheck is at at LEAST 0.2, if not higher.
+  DontCheckIfPlayerIsSprinting: true
+
+
+
+
+#Some things about the plugin itself that are'nt related to any specific detection.
+Specifics:
+  #Time after using a CrackShot weapon a person should not be checked for forcefield.
+  #The value is in ticks: 20 ticks is 1 second.
+  #This is useless if you do not have the CrackShot plugin.
+  CrackShotCompatibilityTime: 40
+  #How many minutes do you want the AutoUpdater notification to remind you after last reminding you?
+  AutoUpdaterMinutes: 5
+  #Don't change this. It will reset your whole config if you do.
+  version: 16
+  #Do you want to call a FAKE LEAVE EVENT to the server that tells OTHER PLUGINS that the player has "LEFT" when he is actually kicked?
+  #Good for plugins like CombatLog, to punish a player as if he left willingly during PVP.
+  #If you have this enabled, you MUST have a kicking or banning command in ALL the hack checks, or the plugin will not function correctly!
+  CallFakeLeaveEvent: false
+  #If the person says invalid chat, execute this command.
+  #This for clients that send invalid messages to the server to kick themselves during PVP and not be detected by current plugins.
+  InvalidChatCommand: tempban %PLAYER% 30m Banned for invalid chat used for PVP Logging!
+  #1 is looking right up, -1 is looking down.
+  #How far down must the player be looking to spawn the headplayer (only works if DontSpawnHeadPlayerWhenLookingUp is true).
+  YLessThan: -0.1
+  #Do you want to enable the AntiAura.bypass permission for admins not to be checked?
+  #This won't affect the AntiAura.debug or AntiAura.reload permission nodes.
+  EnablePermissions: false
+  #Do you want to show debug messages?
+  #This will tell you exactly what kicked the person and what value to change if the person was not kicked correctly.
+  #You may want to disable it to reduce unnecessary spam on a server that has already managed to configure the plugin successfully.
+  ShowDebug: true
+
+
+
+
+#This is a work in progress and may not work against all clients.
+Criticals:
+  #Enable critical blocking? This is a work in progress and may not work against all clients.
+  #Instead of just doing a critical when jumping.
+  Enabled: true
+  #The decrease amount on a non-hacking hit.
+  SafeHitDecrease: 2.0
+  #Ticks after hit to check. Set to 5 if you get false positives.
+  TicksAfterHitToCheck: 10
+  #How high should the number reach before detection?
+  #5 or lower is recommended - You could try higher - or lower.
+  Threshhold: 5
+  #Command to execute when criticals is detected.
+  CriticalsCommand: kick %PLAYER% Criticals is not allowed!#broadcast %PLAYER% was kicked for hacking!
+
+
+
+
+#This will work fine on the default.
+Spambots:
+#This is a basic spambot-blockage thing to block spambots from running around on cracked servers.
+#Feel free to disable.
+  Captcha:
+    #Do you want to enable the CAPTCHA?
+    #This will make users type certain letters in chat before they can do ANYTHING!
+    Enabled: true
+    #Do you want to enable typing of the CAPTCHA Only when the server is detected to be under a spam attack?
+    #This is detected by checking the amount of joins and seeing if there are more joins than usual.
+    EnabledOnlyWhenSpammed: true
+    #Do you want to apply the CAPTCHA to ONLY new players? Existing players won't be asked for a CAPTCHA.
+    #Warning: According to Bukkit's API, logging in and then re-logging in 5 seconds later counts as an "Existing player".
+    NewPlayersOnly: true
+    #Command to execute when detected.
+    CaptchaCommand: kick %PLAYER% You failed the captcha!
+    #Message to send to people. CAPTCHA is replaced with the CAPTCHA.
+    Message: Please type CAPTCHA to move and type commands!
+  MessageDisabling:
+    #This will stop all chat from a player until he has moved.
+    #Will only stop simple spambots.
+    StopChatBeforeMovement: true
+    #Do you want to disable join and leave messages under an attack?
+    #This will only disable the messages if the server is detected to be under a bot attack.
+    DisableJoinAndLeaveMessages: true
+
+#Setting this to false will disable ALL HACK CHECKS IN THE CONFIG BELOW THIS LINE!!
+#Set this to false if you have a plugin like NoCheatPlus to block other hacks.
+EnableNormalChecks: true
+
+#This will work fine on the default config.
+Flight:
+    #Enable fly checks?
+    Enabled: true
+    #How many times must the person be detected as flying to be detected?
+    Threshhold: 5
+    #When the player is detected to be doing legitimate activities, how much should the Threshhold be lowered?
+    LowerAmount: 1
+    #What command do you want to execute when someone is detected for flying?
+    FlightCommand: kick %PLAYER% Flying is not allowed!#broadcast %PLAYER% was kicked for hacking!
+    #Do you want to make the plugin compatible with other plugins (like launch pads) that launch players?
+    #This will make it take longer to detect fly, but will ensure compatibility with all plugins.
+    CompatibleWithOtherPlugins: false
+
+
+
+
+
+#You can ignore anything down here. It's pretty much stuff you won't ever want to change, but is there just in case.
+
+
+
+
+#Stuff related to what name to choose. You can usually ignore this. The defaults are fine.
+All:
+  #Takes special measures to stop crashes. May cause slight memory leaks, but nothing serious.
+  #Really, only enable this if I tell you to.
+  StopCrashes: false
+  #Force dependency download?
+  ForceDependencyDownload: true
+  #Not recommended if you don't have an SSD since it goes through the player files.
+  #Gives NPCs real names of people that were previously on your server.
+  RealisticPlayerNames: false
+  #Do you want to generate a random numeric name for the fake players?
+  #Set this to false to just have a "_" for all player names.
+  RandomPlayerNames: true
+  #Do you want the MapScrewer mobs and the Forcefield around checking mobs to be invisible (I recommend you leave as true)?
+  Invisible: true

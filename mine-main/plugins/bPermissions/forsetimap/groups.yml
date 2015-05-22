@@ -1,0 +1,269 @@
+default: default
+groups:
+  sinpermisos:
+    permissions:
+    - logit.player
+    groups: []
+  owner:
+    permissions:
+    - bPermissions.*
+    groups:
+    - admin
+    meta:
+      prefix: '>&6[&a&lOwner&6]&c '
+      prority: '100'
+  hierro:
+    permissions:
+    - essentials.kits.hierro
+    groups:
+    - donor
+    meta:
+      prefix: '>&6Vip&7Hierro&f'
+  moderator:
+    permissions:
+    - BungeePing.config
+    - anticheat.system.notice
+    - anticheat.system.report
+    - anticheat.system.xray
+    - bukkit.command.kick
+    - essentials.ban.notify
+    - essentials.geoip.show
+    - essentials.jails
+    - essentials.kick
+    - essentials.kick.notify
+    - essentials.tempban
+    - essentials.togglejail
+    - mv.bypass.gamemode.Hungergames
+    - mv.bypass.gamemode.Parcelas
+    - mv.bypass.gamemode.Spawn
+    - mv.bypass.gamemode.forseti-games
+    - mv.bypass.gamemode.forsetimap
+    - mv.bypass.gamemode.forsetimap_nether
+    - mv.bypass.gamemode.forsetimap_the_end
+    - mv.bypass.gamemode.zonarecursos
+    - skinsrestorer.cmds
+    groups:
+    - default
+  admin:
+    permissions:
+    - anticheat.admin
+    - anticheat.check.nofall
+    - anticheat.check.spam
+    - anticheat.check.vclip
+    - anticheat.check.xray
+    - anticheat.system.alert
+    - anticheat.system.alertall
+    - bPermissions.*
+    - bukkit.broadcast
+    - bukkit.broadcast.admin
+    - bukkit.command.gamemode
+    - bukkit.command.give
+    - bukkit.command.kill
+    - bukkit.command.list
+    - bukkit.command.op.give
+    - bukkit.command.op.take
+    - bukkit.command.reload
+    - bukkit.command.teleport
+    - bukkit.command.time
+    - bukkit.command.time.add
+    - bukkit.command.time.set
+    - bukkit.command.toggledownfall
+    - bukkit.command.unban
+    - bukkit.command.unban.ip
+    - bukkit.command.unban.player
+    - bukkit.command.version
+    - bukkit.command.whitelist
+    - bukkit.command.whitelist.add
+    - bukkit.command.whitelist.disable
+    - bukkit.command.whitelist.enable
+    - bukkit.command.whitelist.list
+    - bukkit.command.whitelist.reload
+    - bukkit.command.whitelist.remove
+    - bukkit.command.xp
+    - bungeecord.command.alert
+    - bungeecord.command.find
+    - bungeecord.command.ip
+    - bungeecord.command.send
+    - essentials.*
+    - limitcreative.clearlore
+    - logit.config.*
+    - minecraft.command.op
+    - multiverse.core.purge
+    - mv.bypass.gamemode.Hungergames
+    - mv.bypass.gamemode.Parcelas
+    - mv.bypass.gamemode.Spawn
+    - mv.bypass.gamemode.forseti-games
+    - mv.bypass.gamemode.forsetimap
+    - mv.bypass.gamemode.forsetimap_nether
+    - mv.bypass.gamemode.forsetimap_the_end
+    - mv.bypass.gamemode.zonarecursos
+    - nocheatplus.admin
+    - nocheatplus.checks
+    - nocheatplus.notify
+    - skinsrestorer.cmds
+    - ^essentials.afk.auto
+    groups:
+    - moderator
+    meta:
+      prefix: '>&dH&coster&f'
+      prority: '100'
+  oro:
+    permissions:
+    - anticheat.check.fly
+    - anticheat.check.sneak
+    - essentials.fly
+    - essentials.kits.oro
+    - essentials.repair
+    groups:
+    - donor
+    meta:
+      prefix: '>&6Vip&eOro&f'
+      prority: '10'
+  default:
+    permissions:
+    - ChestShop.shop.buy
+    - ChestShop.shop.sell
+    - HiveJumpPads.use.JumpPad
+    - HiveJumpPads.use.Trampoline
+    - anticheat.check.fly
+    - automessage.receive.json
+    - automessage.receive.regular
+    - banknotes.deposit
+    - banknotes.withdraw
+    - bchatmanager.chat.color
+    - bchatmanager.me
+    - bukkit.broadcast.user
+    - bukkit.command.back
+    - bukkit.command.r
+    - bukkit.command.tps
+    - chestcommands.open.example.yml
+    - chestcommands.open.ps.yml
+    - essentials.afk
+    - essentials.back
+    - essentials.balance
+    - essentials.build.break.*
+    - essentials.build.craft.*
+    - essentials.build.drop.*
+    - essentials.build.interact.*
+    - essentials.build.pickup.*
+    - essentials.build.place.*
+    - essentials.delhome
+    - essentials.help
+    - essentials.home
+    - essentials.info
+    - essentials.kick.notify
+    - essentials.me
+    - essentials.motd
+    - essentials.msg
+    - essentials.pay
+    - essentials.rules
+    - essentials.sethome
+    - essentials.signs.use.heal
+    - essentials.signs.use.mail
+    - essentials.spawn
+    - essentials.tpa
+    - essentials.tpaccept
+    - essentials.tpadeny
+    - essentials.tpahere
+    - essentials.warp
+    - essentials.warp.list
+    - iConomy.top
+    - logit.player
+    - mobarena.use.arenalist
+    - mobarena.use.join
+    - mobarena.use.leave
+    - mobarena.use.playerlist
+    - mobarena.use.spectate
+    - multiverse.teleport.self.*
+    - nocheatplus.checks
+    - nocheatplus.command.info
+    - plotme.limit.1
+    - plotme.use.add
+    - plotme.use.auto
+    - plotme.use.claim
+    - plotme.use.clear
+    - plotme.use.home
+    - plotme.use.info
+    - plotme.use.remove
+    - scoreboardstats.sign
+    - serversign.use.use
+    - serversigns.use.*
+    - skinsrestorer.playercmds
+    - trading.trade
+    - worldguard.region.teleport.*
+    - ^bukkit.command.help
+    - ^bukkit.command.pl
+    - ^bukkit.command.plugins
+    groups: []
+  donor:
+    permissions:
+    - dynmap.hide.self
+    - dynmap.show.self
+    - essentials.Workbench
+    - essentials.afk.kickexempt
+    - essentials.back
+    - essentials.back.ondeath
+    - essentials.craft
+    - essentials.kit
+    - essentials.pweather
+    - essentials.rain.off
+    - essentials.sethome.multiple.donor
+    - groups.recursosvip
+    - plotme.limit.2
+    groups:
+    - default
+  carbon:
+    permissions:
+    - essentials.kits.carbon
+    groups:
+    - donor
+    meta:
+      prefix: '>&6Vip&0Carbon&f'
+      prority: '10'
+  loggedin:
+    permissions: []
+    groups:
+    - default
+  diamante:
+    permissions:
+    - anticheat.check.fly
+    - anticheat.check.sneak
+    - essentials.fly
+    - essentials.kits.diamante
+    - essentials.nick
+    - essentials.nick.color
+    - essentials.nick.format
+    - essentials.repair
+    - essentials.sethome.multiple.diamante
+    - plotme.limit.3
+    groups:
+    - donor
+    meta:
+      prefix: '>&6Vip&bDiamante&f'
+      prority: '10'
+  builder:
+    permissions:
+    - anticheat.check.fly
+    - coloredsigns.format
+    - essentials.afk.kickexempt
+    - essentials.fly
+    - essentials.heal.cooldown.bypass
+    - essentials.kits.builder
+    - holograms.*
+    groups:
+    - default
+    meta:
+      prefix: '>&2Builder&f'
+      prority: '10'
+  recursos:
+    permissions:
+    - essentials.kits.cristales
+    groups: []
+  redstone:
+    permissions:
+    - essentials.kits.redstone
+    groups:
+    - donor
+    meta:
+      prefix: '>&6Vip&cRedstone&f'
+      prority: '10'

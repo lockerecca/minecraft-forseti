@@ -1,0 +1,45 @@
+#  ----------------------------------------------------
+#  AutoMessage Configuration File
+#  ----------------------------------------------------
+#  Message Configuration:
+#     Messages are handled in lists to allow for advanced customization!
+#     Feel free to add color codes by using & in your messages!
+#     To split a message onto multiple lines use the \n delimiter!
+#     Lines starting with / will be run as a command!
+#     To add single apostrophes into a message use ''.
+#     For a complete tutorial go to http://dev.bukkit.org/server-mods/automessage.
+#     If you are unfamiliar with YAML use the in-game commands: /am help
+
+settings:
+  enabled: true
+  min-players: 3
+  log-to-console: false
+message-lists:
+  json:
+    enabled: true
+    interval: 320
+    expiry: -1
+    random: false
+    messages:
+    - '{text:"&4[&eInfo&4]&6¡Bienvenido a nuestro servidor de &2Minecraft Forseti",hoverEvent:{action:show_text,value:[{text:"gracias
+      por jugar en nuestro server!",color:blue}]}}'
+    - '{text:"&4[&eInfo&4]&6Recuerda nuestro &f/menu &c-Click Me-",clickEvent:{action:run_command,value:"/menu"}}'
+    - '{text:"&4[&eInfo&4]&6Visita Nuestra Web &c-Click Me-",clickEvent:{action:open_url,value:"http://forseti.com.es"}}'
+    - '{text:"&4[&eInfo&4]&6Visita Nuestro Chat de Voz Teamspeak3&c IP forseti.com.es",clickEvent:{action:open_url,value:"ts3server://forseti.com.es"}}'
+    - '&4[&eInfo&4]&6Mundos &4Reseteados&6 el dia 15-04&7Recursos,The_End,Nether'
+    - '&4[&eInfo&4]&6 Recordar tener una contraseña &4segura&6 tenemos un grupo que
+      se dedica a sacar contraseñas..\nconsideramos que no es motivo de &4Ban'
+    - '{text:"&4[&eInfo&4]&6Intercambios seguros en &f/Warp Trade &c-Click Me-",clickEvent:{action:run_command,value:"/warp
+      trade"}}'
+    - '&4[&eInfo&4]&6 Desactivado &4BUG&6 de piedras de proteccion. &dTodas las piedras
+      se escondieron para arreglarlo'
+    - '&4[&eInfo&4]&4RECUERDA.&6 Pon una contraseña &4segura.&6 Hay un grupo de gente
+      robándolas. No es motivo de Ban, es &4TU&6 responsabilidad. Cámbiala usando
+      &2/changepass "Vieja" "nueva" "repitenueva"'
+  regular:
+    enabled: true
+    interval: 270
+    expiry: -1
+    random: false
+    messages:
+    - '&4[&eInfo&4]&cDonaciones por Paypal a&r &6postmaster@forseti.com.es'

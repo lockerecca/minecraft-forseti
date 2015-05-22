@@ -1,0 +1,12 @@
+formats: 
+    message-format: '%prefix>{jobs}>&9%displayname&f%suffix>&r%message'
+    local-message-format: '[LOCAL] %prefix %player: &f%message'
+    personal-message-format: '[MSG] [%player -> %reciever] &r%message'
+    op-message-format: '&c[OPS ONLY] %player: &f%message'
+    me-format: '&5* %displayname &5%message'
+toggles:
+    control-me: true
+    ranged-mode: false
+    special-features: false
+other:
+    chat-range: 100.0

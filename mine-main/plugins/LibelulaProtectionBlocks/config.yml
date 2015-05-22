@@ -1,0 +1,58 @@
+# -
+# About editing this file:
+# * Don't edit this file if you aren't sure about what are you doing.
+# * Don't use tabs, this is a yaml file so you have to use spaces instead.
+# * Don't get rid of the indents. They are indented so some entries are
+#   in categories (like "configurable-flags" is in the "player" category.
+# * If you want to check the format of this file before putting it
+#   into this plugin, paste it into http://yaml-online-parser.appspot.com/
+#   and see if it gives "ERROR:".
+# * Lines starting with # are commentsand so they are ignored.
+# -
+ps-default:
+  flags:
+    greeting: Zona de %player%'s
+    farewell: Has salido de la zona de %player%'s
+    use: deny
+    creeper-explosion: deny
+player:
+  configurable-flags:
+  - build
+  - chest-access
+  - creeper-explosion
+  - enderpearl
+  - entity-item-frame-destroy
+  - entity-painting-destroy
+  - farewell
+  - ghast-fireball
+  - greeting
+  - lava-fire
+  - lava-flow
+  - lighter
+  - pistons
+  - pvp
+  - sleep
+  - tnt
+  - use
+  - water-flow
+ps-backward-compatibility:
+  imported: true
+  mode: new
+  full-y-axis: false
+  auto-hide: true
+  no-drops: false
+language: es
+ignored:
+  worlds:
+  - Parcelas
+  - Forseti-Games
+  - ForsetiMap_nether
+  - Spawn
+limits:
+  active: false
+  permission:
+    default: 2
+clean-old-protections:
+  active: false
+  policy: ALL
+  days: 30

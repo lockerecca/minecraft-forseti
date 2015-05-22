@@ -1,0 +1,228 @@
+######################
+#+                  +#
+#   MENU SETTINGS    #
+#+                  +#
+######################
+
+menu-settings:
+  KEEP-OPEN: true
+  # name - appears as the title - REQUIRED
+  name: '&1Menú de proteccion'
+
+  # rows - the number of rows of the chest - REQUIRED
+  rows: 3
+
+  # command - OPTIONAL (you can remove this or set it to '')
+  # Bind multiple commands using ; (command: 'menu; m; me')
+  command: 'menups'
+
+  # This command command will be execute when the menu is opened.
+  # Supports all the icon command types.
+  open-action: 'sound: note pling; tell: &eHas abierto el menu para configurar tu piedra de proteccion.'
+
+  # open-with-item - OPTIONAL
+  # The menu will open only right-clicking with orange wool [35:1]
+  open-with-item:
+    id: 19
+    left-click: false
+    right-click: false
+
+
+######################
+#+                  +#
+#       ITEMS        #
+#+                  +#
+######################
+
+regresaralmenu:
+  KEEP-OPEN: true
+  COMMAND: 'menu'
+  NAME: '&3[v]Regresar al Menu'
+  LORE:
+  ID: 123
+  POSITION-X: 9
+  POSITION-Y: 3
+  
+ps-info-allow:
+  KEEP-OPEN: true
+  COMMAND: 'ps info'
+  NAME: '&3[v]ps info'
+  LORE:
+    - 'Muestra Informacion'
+    - 'de tu zona protegida'
+  ID: 339
+  POSITION-X: 1
+  POSITION-Y: 3
+  
+tnt-allow:
+  KEEP-OPEN: true
+  COMMAND: 'ps tnt allow'
+  NAME: '&3[v]ps tnt allow'
+  LORE:
+    - 'Activa el uso de DINAMITA'
+    - 'en tu zona protegida'
+  ID: tnt
+  POSITION-X: 1
+  POSITION-Y: 1
+  
+  
+tnt-deny:
+  KEEP-OPEN: true
+  COMMAND: 'ps tnt deny'
+  NAME: '&3[v]ps tnt deny'
+  LORE:
+    - 'Desactiva el uso de DINAMITA'
+    - 'en tu zona protegida'
+  ID: tnt
+  POSITION-X: 1
+  POSITION-Y: 2
+
+lavaflow-allow:
+  KEEP-OPEN: true
+  COMMAND: 'ps lava-flow allow'
+  NAME: '&3[v]ps lava-flow allow'
+  LORE:
+    - 'Activa la propagacion de LAVA'
+    - 'en tu zona protegida'
+  ID: 327
+  POSITION-X: 5
+  POSITION-Y: 1
+  
+  
+lavaflow-deny:
+  KEEP-OPEN: true
+  COMMAND: 'ps lava-flow deny'
+  NAME: '&3[v]ps lava-flow deny'
+  LORE:
+    - 'Desactiva la propagacion de LAVA'
+    - 'en tu zona protegida'
+  ID: 327
+  POSITION-X: 5
+  POSITION-Y: 2
+
+water-flow-allow:
+  KEEP-OPEN: true
+  COMMAND: 'ps water-flow allow'
+  NAME: '&3[v]ps water-flow allow'
+  LORE:
+    - 'Activa la propagacion de AGUA'
+    - 'en tu zona protegida'
+  ID: 326
+  POSITION-X: 4
+  POSITION-Y: 1
+  
+  
+water-flow-deny:
+  KEEP-OPEN: true
+  COMMAND: 'ps water-flow deny'
+  NAME: '&3[v]ps water-flow deny'
+  LORE:
+    - 'Desactiva la propagacion de AGUA'
+    - 'en tu zona protegida'
+  ID: 326
+  POSITION-X: 4
+  POSITION-Y: 2
+
+pvp-allow:
+  KEEP-OPEN: true
+  COMMAND: 'ps pvp allow'
+  NAME: '&3[v]ps pvp allow'
+  LORE:
+    - 'Activa poder luchar'
+    - 'en tu zona protegida'
+  ID: skull:3
+  POSITION-X: 2
+  POSITION-Y: 1
+  
+  
+pvp-deny:
+  KEEP-OPEN: true
+  COMMAND: 'ps pvp deny'
+  NAME: '&3[v]ps pvp deny'
+  LORE:
+    - 'Desactiva poder luchar'
+    - 'en tu zona protegida'
+  ID: skull:3
+  POSITION-X: 2
+  POSITION-Y: 2
+pistons-allow:
+  KEEP-OPEN: true
+  COMMAND: 'ps pistons allow'
+  NAME: '&3[v] ps pistons allow'
+  LORE:
+    - 'Activa poder usar pistones'
+    - 'en tu zona protegida'
+  ID: 33
+  POSITION-X: 3
+  POSITION-Y: 1
+  
+  
+pistons-deny:
+  KEEP-OPEN: true
+  COMMAND: 'ps pistons deny'
+  NAME: '&3[v] ps pistons deny'
+  LORE:
+    - 'Desactiva poder usar pistones'
+    - 'en tu zona protegida'
+  ID: 33
+  POSITION-X: 3
+  POSITION-Y: 2
+
+entry-allow:
+  KEEP-OPEN: true
+  COMMAND: 'ps entry allow'
+  NAME: '&3[v] ps entry allow'
+  LORE:
+    - 'Activa poder entrar '
+    - 'en tu zona protegida'
+  ID: 166
+  POSITION-X: 6
+  POSITION-Y: 1
+  
+  
+entry-deny:
+  KEEP-OPEN: true
+  COMMAND: 'ps entry deny'
+  NAME: '&3[v] ps entry deny'
+  LORE:
+    - 'Desactiva poder entrar'
+    - 'en tu zona protegida'
+  ID: 166
+  POSITION-X: 6
+  POSITION-Y: 2
+
+add-remove-info:
+  KEEP-OPEN: true
+  COMMAND: 'menups'
+  NAME: '&3[v] ps add o remove Nombre'
+  LORE:
+    - 'ps add nombrejugador '
+    - '(añade perimso para usar tu zona)'
+    - 'ps remove nombrejugador '
+    - '(quita dicho permiso)'
+  ID: 389
+  POSITION-X: 3
+  POSITION-Y: 3
+
+ps-hide:
+  KEEP-OPEN: true
+  COMMAND: 'ps hide'
+  NAME: '&3[v] ps hide'
+  LORE:
+    - 'Esconde tu Piedra de proteccion'
+
+  ID: 48
+  POSITION-X: 9
+  POSITION-Y: 1
+
+ps-unhide:
+  KEEP-OPEN: true
+  COMMAND: 'ps unhide'
+  NAME: '&3[v] ps unhide'
+  LORE:
+    - 'muestra de nuevo la piedra de proteccion'
+  ID: 373
+  POSITION-X: 9
+  POSITION-Y: 2
+  
+  

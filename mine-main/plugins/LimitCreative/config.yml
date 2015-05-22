@@ -1,0 +1,37 @@
+# The message that appears on the item.
+# Make sure to end it with "%Name%"
+ItemMessage: '&cCreado en creative por %Name%'
+
+# Rename the crafting result if its a spawned item
+RenameCrafting: true
+
+# The following does not effect creative mode. Only non-creative
+
+# Prevent their using it to attack, defend, place, etc.
+PreventUsage: true
+# Prevent their using it to craft items
+PreventCrafting: true
+# Prevent using it in a anvil
+PreventAnvil: true
+# Prevent them from using the armour in survival mode
+PreventArmor: true
+# Mark blocks which are creative spawned in to drop creative spawned items.
+MarkBlocks: true
+
+# What worlds are disabled  for this.
+# It means this plugin will ignore that world.
+# Items carried over from that world WILL be usable.
+# You will need to have another plugin to seperate inventories.
+WorldsDisabled:
+  - Spawn
+  
+# Does the plugin save the marked blocks into a config? Overtime this may get.. laggy.
+SaveBlocks: true
+
+# Turn this to true if you wish to use mysql for the saveblocks. Else it will default to flatfile.
+UseMysql: true
+# You will need to enter your mysql details here.
+MysqlHost: localhost
+MysqlUsername: someuser
+MysqlPassword: someonepass
+MysqlDatabase: minecraftdb

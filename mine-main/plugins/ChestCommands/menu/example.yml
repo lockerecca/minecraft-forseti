@@ -1,0 +1,170 @@
+######################
+#+                  +#
+#   MENU SETTINGS    #
+#+                  +#
+######################
+
+menu-settings:
+  KEEP-OPEN: true
+  # name - appears as the title - REQUIRED
+  name: '&1Menú rápido'
+
+  # rows - the number of rows of the chest - REQUIRED
+  rows: 3
+
+  # command - OPTIONAL (you can remove this or set it to '')
+  # Bind multiple commands using ; (command: 'menu; m; me')
+  command: 'menu'
+
+  # This command command will be execute when the menu is opened.
+  # Supports all the icon command types.
+  open-action: 'sound: note pling; tell: &eHas abierto el menú rápido.'
+
+  # open-with-item - OPTIONAL
+  # The menu will open only right-clicking with orange wool [35:1]
+  open-with-item:
+    id: 19
+    left-click: false
+    right-click: false
+
+
+######################
+#+                  +#
+#       ITEMS        #
+#+                  +#
+######################
+
+
+spawncmd:
+  COMMAND: 'spawn'
+  NAME: '&3[v] Teletransporte al spawn'
+  LORE:
+    - 'Te ejecuta el comando /spawn'
+    - 'y te teletransporta al Spawn.'
+  ID: bed
+  POSITION-X: 4
+  POSITION-Y: 2
+
+
+colored-enchanted-stacked-wool:
+  COMMAND: 'warp minijuegos'
+  NAME: '[v] Teletransporte a la zona &4Minijuegos'
+  LORE:
+    - 'Te teletransporta a la zona'
+    - 'minijuegos &4Forseti.'
+  ID: 322
+  DATA-VALUE: 1
+  POSITION-X: 5
+  POSITION-Y: 2
+
+  
+test-with-placeholder:
+  COMMAND: 'tell: &9Online players: &f{online}/{max_players}; tell: &9Your name: &f{player}; tell: &9The world you are in: &f{world}; tell: &9Money: &f{money}'
+  NAME: '&6[v] Información de tu jugador'
+  LORE:
+    - 'Te muestra la información de tu jugador'
+    - 'Dinero, Nombre, Lugar.'
+  ID: empty map
+  POSITION-X: 5
+  POSITION-Y: 3
+
+
+economy-give:
+  COMMAND: 'tell: &aHas pagado &4100$ por ese producto.; give: 297'
+  NAME: '&e[v] Comprar comida'
+  LORE:
+    - '¡Tienes hambre y no tienes comida?'
+    - 'Compa PAN con un solo click pagando 100$'
+    - '¡Fiable y facil!'
+  ID: Bread
+  PRICE: 100
+  POSITION-X: 6
+  POSITION-Y: 2
+
+
+warp-parcelas:
+  COMMAND: 'warp parcelas'
+  NAME: '[v] Teletransporte a &3Parcelas'
+  LORE:
+    - '&7Te teletransporta a la'
+    - '&7zona &3Parcelas.'
+  ID: 386
+  KEEP-OPEN: true
+  POSITION-X: 5
+  POSITION-Y: 1
+
+
+menu-close-no-commands-no-lore:
+  NAME: '&6[cross]Salir del menu[cross]'
+  ID: redstone lamp
+  LORE:
+  POSITION-X: 9
+  POSITION-Y: 3
+  
+ 
+recursosvip:
+  COMMAND: 'warp minavip'
+  NAME: '[*] Teletransporte a &2Zona Recursos'
+  LORE:
+    - '&7Te teletransporta a la'
+    - '&7zona &2Recursos VIP.'
+  ID: diamond_ore
+  KEEP-OPEN: true
+  POSITION-X: 1
+  POSITION-Y: 2
+
+vip-rain-off:
+  COMMAND: 'op: rain off'
+  VIEW-PERMISSION: 'essentials.sethome.multiple.donor'
+  NAME: '&e[v] quitar lluvia'
+  LORE:
+    - '¡Desactiva la Lluvia!'
+    - '¡Fiable y facil!'
+    - 'solo los rangos vips'
+  ID: 370
+  POSITION-X: 1
+  POSITION-Y: 3
+
+recursos:
+  COMMAND: 'warp recursos'
+  NAME: '[*] Teletransporte a &2Zona Recursos'
+  LORE:
+    - '&7Te teletransporta a la'
+    - '&7zona &2Recursos.'
+  ID: gold_ore
+  KEEP-OPEN: true
+  POSITION-X: 6
+  POSITION-Y: 1
+
+warpsurvival:
+  COMMAND: 'warp survival'
+  NAME: '[*] Teletransporte a &2Zona survival'
+  LORE:
+    - '&7Te teletransporta a la'
+    - '&7zona &2survival PVP ON.'
+  ID: gold_ore
+  KEEP-OPEN: true
+  POSITION-X: 4
+  POSITION-Y: 1
+  
+warpsurvival2:
+  KEEP-OPEN: true
+  COMMAND: 'warp survival2'
+  NAME: '[*] Teletransporte a &2 Nueva Zona survival'
+  LORE:
+    - '&7Te teletransporta a la'
+    - '&7Nueva zona &2survival PVP ON.'
+  ID: diamond_hoe
+  POSITION-X: 3
+  POSITION-Y: 1
+
+menups:
+  KEEP-OPEN: true
+  COMMAND: 'menups'
+  NAME: '&3Abre el menu de proteccion'
+  LORE:
+    - 'para configurar tu'
+    - 'piedra de proteccion'
+  ID: 56
+  POSITION-X: 9
+  POSITION-Y: 1

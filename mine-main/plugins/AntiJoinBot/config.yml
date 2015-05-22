@@ -1,0 +1,28 @@
+AntiJoinBot:
+  MySQL:
+    Offline: true
+    Host: localhost
+    Port: 3306
+    Database: mine
+    User: mine
+    Password: Jbzedu3EDMGfB8Kq
+  Blacklists:
+    http://www,shroomery,org/ythan/proxycheck,php?ip=: Y
+  DownloadBlacklist:
+    Enabled: true
+  ServerListPing:
+    Enabled: false
+    Message: Don't use a Proxy :P
+  Force:
+    Enabled: false
+    Message: Proxy Check... pls. reJoin!
+  Kick:
+    Message: Contacta con @ClanForseti. Detectado en lista Negra..
+  Warmup:
+    Enabled: true
+    Seconds: 60
+  OfflineMode:
+    Enabled: true
+    MigrateUUID: false
+  Debug:
+    Enabled: false

@@ -1,0 +1,15 @@
+spawns: 
+  default: 
+    world: Spawn
+    x: 3390.5634562578516
+    y: 101.0
+    z: -1052.0598690734041
+    yaw: -88.76221
+    pitch: 9.300026
+  hungergames: 
+    world: Hungergames
+    x: -70.4640900978982
+    y: 78.0
+    z: 191.44013149345966
+    yaw: -179.90771
+    pitch: 3.9000149

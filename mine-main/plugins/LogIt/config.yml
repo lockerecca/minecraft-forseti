@@ -1,0 +1,236 @@
+# # # # # # # # # # # # # # # #
+#  LogIt Configuration File   #
+# # # # # # # # # # # # # # # #
+
+locale: en
+forceLogin:
+  global: true
+  inWorlds: []
+  exemptPlayers: []
+  timeout:
+    enabled: true
+    value:
+      login: 3min
+      register: 10min
+    disableForPlayers: []
+  allowedCommands: []
+  prevent:
+    move: true
+    toggleSneak: true
+    blockPlace: true
+    blockBreak: true
+    damageIn: true
+    damageOut: true
+    regainHealth: true
+    foodLevelChange: true
+    entityTarget: true
+    chat: true
+    commandPreprocess: true
+    pickupItem: true
+    dropItem: true
+    interact: true
+    interactEntity: true
+    inventoryClick: true
+  moveRadius: 30
+  obfuscate:
+    air: false
+    health: false
+    experience: false
+    hunger: false
+  prompt:
+    register: true
+    login: true
+    minInterval: 5sec
+  periodicalPrompt:
+    enabled: true
+    period: 15sec
+  promptOn:
+    join: true
+    dropItem: true
+    blockPlace: true
+    blockBreak: true
+    interact: true
+    interactEntity: true
+  hideChatMessages: false
+  hideFromTabList: false
+  hideOtherPlayers: false
+loginSessions:
+  enabled: false
+  validnessTime: 7days
+loginHistory:
+  enabled: false
+  recordsToKeep: 10
+messages:
+  beautify: false
+  join:
+    hide: false
+    showWorld: false
+  multiverseHook: true
+  quit:
+    hide: false
+prohibitedUsernames: []
+usernameCaseMismatch:
+  warning: true
+  kick: false
+passwords:
+  minLength: 4
+  maxLength: 40
+  hashingAlgorithm: sha-256
+  complexity:
+    lowercaseLetters: false
+    uppercaseLetters: false
+    numbers: false
+    specialSymbols: false
+    blockSimplePasswords: false
+globalPassword:
+  length: 6
+  invalidateAfter: 5min
+bruteForce:
+  blockLogin:
+    attempts: 5
+    forTime: 20 seconds
+  kick:
+    attempts: 6
+  ban:
+    attempts: 7
+kickUnregistered: false
+premiumTakeover:
+  enabled: true
+  promptOn: join
+automaticAccountDeletion:
+  enabled: true
+  inactivityTime: 60days
+automaticLogout:
+  enabled: false
+  inactivityTime: 10min
+accountsPerIp:
+  amount: 2
+  unrestrictedIps: []
+accountsPerEmail: 1
+reserveSlots:
+  amount: 0
+  forPlayers: []
+cooldowns:
+  register: 3sec
+  unregister: 3sec
+  changepass: 1sec
+  changeemail: 1sec
+  recoverpass: 2min
+passwordRecovery:
+  enabled: false
+  subject: Password recovery for %player%
+  bodyTemplate: mail/password-recovery.html
+  htmlEnabled: true
+  passwordLength: 6
+  passwordCombination: abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ
+  promptToAddEmail: true
+mailSending:
+  emailAddress: some@email.com
+  smtp:
+    host: somehost
+    port: 465
+    user: someuser
+    password: someonepass
+waitingRoom:
+  enabled: true
+  location:
+    ==: Location
+    world: ForsetiMap
+    x: 12.0
+    y: 53.0
+    z: 225.0
+    yaw: 3.0
+    pitch: 0.0
+newbieTeleport:
+  enabled: false
+  location:
+    ==: Location
+    world: world
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    yaw: 0.0
+    pitch: 0.0
+groups:
+  enabled: false
+  registered: default
+  unregistered: default
+  loggedIn: loggedin
+  loggedOut: default
+profiles:
+  enabled: false
+  path: profiles
+  fields: {}
+storage:
+  accounts:
+    leading:
+      storageType: sqlite
+      csv:
+        dir: ./
+      sqlite:
+        filename: accounts.db
+      h2:
+        filename: accounts
+      mysql:
+        host: jdbc:mysql://localhost:3306/
+        user: root
+        password: ''
+        database: ''
+      postgresql:
+        host: jdbc:postgresql://localhost:5432/database
+        user: postgres
+        password: ''
+      unit: logit
+      cache: disabled
+    mirror:
+      storageType: none
+      csv:
+        dir: ./
+      sqlite:
+        filename: accounts2.db
+      h2:
+        filename: accounts2
+      mysql:
+        host: jdbc:mysql://localhost:3306/
+        user: root
+        password: ''
+        database: ''
+      postgresql:
+        host: jdbc:postgresql://localhost:5432/database
+        user: postgres
+        password: ''
+      unit: logit2
+    keys:
+      username: username
+      uuid: uuid
+      salt: salt
+      password: password
+      hashing_algorithm: hashing_algorithm
+      ip: ip
+      login_session: login_session
+      email: email
+      last_active_date: last_active_date
+      reg_date: reg_date
+      is_locked: is_locked
+      login_history: login_history
+      display_name: display_name
+      persistence: persistence
+  sessions:
+    filename: sessions.db
+backup:
+  path: backup
+  filename: yyyy-MM-dd_HH-mm-ss
+  schedule:
+    enabled: true
+    interval: 12hours
+  forceBeforeRestore: false
+  manualRemoveLimit: 3
+stats:
+  enabled: true
+logging:
+  file:
+    enabled: false
+    filename: debug.log
+    level: 0
+  verboseConsole: false
+terminateUnsafeServer: true
